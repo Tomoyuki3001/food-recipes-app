@@ -39,5 +39,11 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.3.5"
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
   }
 }
