@@ -58,7 +58,7 @@ const Recipes = () => {
       </div>
       {recipes?.length > 0 ? (
         <>
-          <div className="w-full flex flex-wrap gap-10 px-0 lg:px-10 py-10">
+          <div className="w-full grid md:grid-cols-3 lg:grid-cols-5 gap-5 py-10 px-8 lg:px-20">
             {recipes?.map((item, index) => (
               <RecipeCard recipe={item} key={index} />
             ))}
