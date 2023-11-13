@@ -7,8 +7,8 @@ import { fetchRecipes } from "../utilities";
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
-  const [query, setQuery] = useState("Vegan");
-  const [limit, setLimit] = useState(30);
+  const [query, setQuery] = useState("Cake");
+  const [limit, setLimit] = useState(10);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -18,6 +18,7 @@ const Recipes = () => {
   const fetchRecipe = async () => {
     try {
       const data = await fetchRecipes({ query, limit });
+      console.log("data", data);
       setRecipes(data);
       setLoading(false);
     } catch (error) {
@@ -29,7 +30,7 @@ const Recipes = () => {
 
   const handleSearchedRecipe = async (e) => {
     e.preventDefault();
-    fetchRecipe();
+    fetchRecipes();
   };
 
   const showMore = () => {
