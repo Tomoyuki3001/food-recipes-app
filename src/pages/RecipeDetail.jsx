@@ -111,7 +111,7 @@ const RecipeDetail = () => {
               <>
                 <p className="text-white text-2xl">Also Try This</p>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 px-1 pt-3">
+                <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-2 px-1 pt-4">
                   {recipes?.map((item, index) => (
                     <RecipeCard recipe={item} index={index} />
                   ))}
