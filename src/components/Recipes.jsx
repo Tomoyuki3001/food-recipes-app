@@ -8,7 +8,7 @@ import { fetchRecipes } from "../utilities";
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [query, setQuery] = useState("Cake");
-  const [limit, setLimit] = useState(10);
+  // const [limit, setLimit] = useState(10);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -17,8 +17,7 @@ const Recipes = () => {
 
   const fetchRecipe = async () => {
     try {
-      const data = await fetchRecipes({ query, limit });
-      console.log("data", data);
+      const data = await fetchRecipes({ query });
       setRecipes(data);
       setLoading(false);
     } catch (error) {
@@ -33,10 +32,10 @@ const Recipes = () => {
     fetchRecipes();
   };
 
-  const showMore = () => {
-    setLimit((prev) => prev + 10);
-    fetchRecipe();
-  };
+  // const showMore = () => {
+  //   setLimit((prev) => prev + 10);
+  //   fetchRecipe();
+  // };
 
   useEffect(() => {
     setLoading(true);
@@ -64,14 +63,14 @@ const Recipes = () => {
               <RecipeCard recipe={item} key={index} />
             ))}
           </div>
-          <div className="flex w-full items-center justify-center py-10">
+          {/* <div className="flex w-full items-center justify-center py-10">
             <button
               className="bg-green-800 text-white px-3 py-1 rounded-full text-sm"
               onClick={showMore}
             >
               Show more
             </button>
-          </div>
+          </div> */}
         </>
       ) : (
         <>
