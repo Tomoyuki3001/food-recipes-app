@@ -16,7 +16,7 @@ const Recipes = () => {
 
   const fetchRecipe = async () => {
     try {
-      const data = await fetchRecipes({ query });
+      const data = await fetchRecipes(query);
       setRecipes(data);
       setLoading(false);
     } catch (error) {
