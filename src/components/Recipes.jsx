@@ -8,7 +8,6 @@ import { fetchRecipes } from "../utilities";
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [query, setQuery] = useState("Cake");
-  // const [limit, setLimit] = useState(20);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -31,11 +30,6 @@ const Recipes = () => {
     e.preventDefault();
     fetchRecipes();
   };
-
-  // const showMore = () => {
-  //   setLimit((prev) => prev + 10);
-  //   fetchRecipe();
-  // };
 
   useEffect(() => {
     setLoading(true);
@@ -63,14 +57,6 @@ const Recipes = () => {
               <RecipeCard recipe={item} key={index} />
             ))}
           </div>
-          {/* <div className="flex w-full items-center justify-center py-10">
-            <button
-              className="bg-green-800 text-white px-3 py-1 rounded-full text-sm"
-              onClick={showMore}
-            >
-              Show more
-            </button>
-          </div> */}
         </>
       ) : (
         <>
