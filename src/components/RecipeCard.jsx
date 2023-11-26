@@ -18,10 +18,10 @@ const RecipeCard = ({ recipe }) => {
         <div className="p-3">
           <p className="text-white font-semibold">{label}</p>
           <div className="mt-2">
-            <span className="px-2 py-1 text-[12px] capitalize bg-[#0c452243] shadow-1 rounded-full mr-3 text-green-500">
+            <span className="px-2 py-1 text-[12px] capitalize bg-[#0c452243] shadow-1 rounded-full mr-3 text-amber-500">
               {cuisineType}
             </span>
-            <span className="px-2 py-1 text-[12px] capitalize bg-[#0c452243] shadow-1 rounded-full text-green-500">
+            <span className="px-2 py-1 text-[12px] capitalize bg-[#0c452243] shadow-1 rounded-full text-amber-500">
               {mealType}
             </span>
           </div>

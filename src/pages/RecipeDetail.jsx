@@ -22,6 +22,7 @@ const RecipeDetail = () => {
       setRecipe(data);
 
       const recommend = await fetchRecipes({ query: recipe?.label, limit: 5 });
+      console.log("reccomend", recommend);
       setRecipes(recommend);
 
       setLoading(false);
@@ -77,12 +78,12 @@ const RecipeDetail = () => {
           {/* LEFT SIDE */}
           <div className="w-full md:w-2/4 md:border-r border-slate-800 pr-1">
             <div className="flex flex-col gap-5">
-              <p className="text-green-500 text-2xl underline">Ingredients</p>
+              <p className="text-amber-500 text-2xl underline">Ingredients</p>
 
               {recipe?.ingredientLines?.map((ingredient, index) => {
                 return (
                   <p key={index} className="text-neutral-100 flex gap-2">
-                    <AiFillPushpin className="text-green-800 text-xl" />{" "}
+                    <AiFillPushpin className="text-amber-800 text-xl" />{" "}
                     {ingredient}
                   </p>
                 );
@@ -90,7 +91,7 @@ const RecipeDetail = () => {
             </div>
 
             <div className="flex flex-col gap-3 mt-20">
-              <p className="text-green-700 text-2xl underline">Health Labels</p>
+              <p className="text-amber-700 text-2xl underline">Health Labels</p>
 
               <div className="flex flex-wrap gap-4">
                 {recipe?.healthLabels.map((item, index) => (
@@ -98,7 +99,7 @@ const RecipeDetail = () => {
                     className="text-white flex gap-2 bg-[#fff5f518] px-4 py-1 rounded-full "
                     key={index}
                   >
-                    <BsPatchCheck color="green" /> {item}
+                    <BsPatchCheck /> {item}
                   </p>
                 ))}
               </div>
